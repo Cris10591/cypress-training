@@ -10,7 +10,12 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+Cypress.Commands.add('login', (email, password) => { 
+
+    cy.get('#username').type(email)
+    cy.get('#password').type(password)
+    cy.contains('Continue').click()
+ })
 //
 //
 // -- This is a child command --
